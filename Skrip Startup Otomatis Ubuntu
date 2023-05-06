@@ -1,0 +1,13 @@
+[Unit]
+Description=Nginx HTTP Server
+After=network.target
+
+[Service]
+ExecStart=/usr/local/nginx/sbin/nginx
+ExecReload=/usr/local/nginx/sbin/nginx -s reload
+ExecStop=/usr/local/nginx/sbin/nginx -s stop
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
